@@ -1,0 +1,48 @@
+#include <stdio.h>
+int my_strlen(char s[]);
+
+int main(){
+	char text[1000];
+	char text2[1000];
+	int c;
+	int i=0;
+	while((c=getchar())!= '\n'){
+		text[i] = c;
+		++i;
+	}
+	if(c=='\n'){
+		text[i]= '\n';
+		++i;
+	}
+	text[i]= '\0';
+	int len = my_strlen(text);
+	printf("El largo del str es: %d", len);
+	return 0;
+}
+
+int my_strlen(char s[]){
+	int counter=0;
+	for(int i=0; s[i]!= '\n';++i){
+		++counter;
+	}
+	return counter;
+}
+int my_strcmp(char s[], char t[]){
+	//función que compara s y t
+	int ret, lens, lent,i;
+	lens= my_strlen(s);
+	lent= my_strlen(t);
+	if(lens>lent){
+		return lens;
+	}else if(lens<lent){
+		return -1;
+	}else{
+		for(i=0; s[i]=t[i]; ++i){
+			if(s[i]== '\n'){
+				return 0;
+			}
+		}
+}
+	
+	
+}
